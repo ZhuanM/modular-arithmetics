@@ -13,7 +13,7 @@ int main() {
 	{
 		cin >> modulus;
 		if (modulus <= 0) {
-			cout << "Enter a positive number!";
+			cout << "Enter a positive number: ";
 			cin >> modulus;
 		}
 	} while (modulus <= 0);

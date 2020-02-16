@@ -24,13 +24,19 @@ int fillRing(int* ring, int modulus) {
 		ring[i] = i;
 	}
 
+	for (int i = 0; i < modulus; i++) {
+		cout << ring[i] << "\t";
+	}
+
+	cout << endl;
+
 	return 0;
 }
 
 int sumRing(int* ring, int modulus) {
 	int a, b;
 
-	cout << "Enter two numbers.";
+	cout << "You have to enter two numbers." << endl;
 	do
 	{
 		cout << "Enter the first number: ";
@@ -41,7 +47,7 @@ int sumRing(int* ring, int modulus) {
 		}
 	} while (a <= 0 || a >= modulus);
 
-	cout << "You have entered the first number - " << a;
+	cout << "You have entered the first number - " << a << endl;
 
 	do
 	{
@@ -53,10 +59,10 @@ int sumRing(int* ring, int modulus) {
 		}
 	} while (b <= 0 || b >= modulus);
 
-	cout << "You have entered the second number - " << b;
+	cout << "You have entered the second number - " << b << endl;
 
 	int result = (a + b) % modulus;
-	cout << "The sum of the two numbers is = " << result;
+	cout << "The sum of the two numbers is = " << result << endl;
 
 	return 0;
 }
@@ -64,7 +70,7 @@ int sumRing(int* ring, int modulus) {
 int subtractRing(int* ring, int modulus) {
 	int a, b;
 
-	cout << "Enter two numbers.";
+	cout << "You have to enter two numbers." << endl;
 	do
 	{
 		cout << "Enter the first number: ";
@@ -75,7 +81,7 @@ int subtractRing(int* ring, int modulus) {
 		}
 	} while (a <= 0 || a >= modulus);
 
-	cout << "You have entered the first number - " << a;
+	cout << "You have entered the first number - " << a << endl;
 
 	do
 	{
@@ -87,10 +93,10 @@ int subtractRing(int* ring, int modulus) {
 		}
 	} while (b <= 0 || b >= modulus);
 
-	cout << "You have entered the second number - " << b;
+	cout << "You have entered the second number - " << b << endl;
 
 	int result = (a - b) % modulus;
-	cout << "The sum of the two numbers is = " << result;
+	cout << "The sum of the two numbers is = " << result << endl;
 
 	return 0;
 }
@@ -98,7 +104,7 @@ int subtractRing(int* ring, int modulus) {
 int multiplyRing(int* ring, int modulus) {
 	int a, b;
 
-	cout << "Enter two numbers.";
+	cout << "You have to enter two numbers." << endl;
 	do
 	{
 		cout << "Enter the first number: ";
@@ -109,7 +115,7 @@ int multiplyRing(int* ring, int modulus) {
 		}
 	} while (a <= 0 || a >= modulus);
 
-	cout << "You have entered the first number - " << a;
+	cout << "You have entered the first number - " << a << endl;
 
 	do
 	{
@@ -121,10 +127,10 @@ int multiplyRing(int* ring, int modulus) {
 		}
 	} while (b <= 0 || b >= modulus);
 
-	cout << "You have entered the second number - " << b;
+	cout << "You have entered the second number - " << b << endl;
 
 	int result = (a * b) % modulus;
-	cout << "The sum of the two numbers is = " << result;
+	cout << "The sum of the two numbers is = " << result << endl;
 
 	return 0;
 }
@@ -153,13 +159,13 @@ int findReciprocalIndex(unsigned** matrix, int modulus, unsigned sizeOfMatrix) {
 	} while (index < 0 || index >= modulus);
 
 	if (index == 0) {
-		cout << "There isn't such a value";
+		cout << "There isn't such a value." << endl;
 		return 0;
 	}
 
 	for (int i = 1; i < modulus; i++) {
 		if (i == index) {
-			cout << "The reciprocal value is " << matrix[1][index] << endl;
+			cout << "The reciprocal value is - " << matrix[1][index] << endl;
 		}
 	}
 
@@ -180,11 +186,11 @@ int bezuAndEuclidAlgorithm(unsigned** matrix, int modulus) {
 	} while (m < 0 || m >= modulus);
 
 	if (m == 0) {
-		cout << "There isn't such a value" << endl;
+		cout << "There isn't such a value." << endl;
 		return 0;
 	}
 	if (m == 1) {
-		cout << "The reciprocal value is 1" << endl;
+		cout << "The reciprocal value is - 1" << endl;
 		return 0;
 	}
 
@@ -246,12 +252,12 @@ int bezuAndEuclidAlgorithm(unsigned** matrix, int modulus) {
 
 	// ne moje da se deli na 0
 	if (s == 0) {
-		cout << "There isn't such a value" << endl;
+		cout << "There isn't such a value." << endl;
 	}
 
 	for (int i = 1; i < modulus; i++) {
 		if (s == i) {
-			cout << "The reciprocal value is " << matrix[1][i] << endl;
+			cout << "The reciprocal value is - " << matrix[1][i] << endl;
 		}
 	}
 
@@ -268,7 +274,7 @@ int bezuAndEuclidAlgorithm(unsigned** matrix, int modulus) {
 int divisionMatrix(unsigned** matrix, int modulus) {
 	int a, b;
 
-	cout << "Enter two numbers.";
+	cout << "You have to enter two numbers." << endl;
 	do
 	{
 		cout << "Enter the first number: ";
@@ -279,7 +285,7 @@ int divisionMatrix(unsigned** matrix, int modulus) {
 		}
 	} while (a <= 0 || a >= modulus);
 
-	cout << "You have entered the first number - " << a;
+	cout << "You have entered the first number - " << a << endl;
 
 	do
 	{
@@ -291,16 +297,16 @@ int divisionMatrix(unsigned** matrix, int modulus) {
 		}
 	} while (b <= 0 || b >= modulus);
 
-	cout << "You have entered the second number - " << b;
+	cout << "You have entered the second number - " << b << endl;
 
 	int reciprocalNum = matrix[1][b];
 	int result = (a * reciprocalNum) % modulus;
 
 	if (reciprocalNum != 0) {
-		cout << "The result is: " << result;
+		cout << "The result is: " << result << endl;
 	}
 	else {
-		cout << "The result is: -1";
+		cout << "The result is: -1" << endl;
 	}
 
 	return 0;
@@ -314,27 +320,27 @@ int fastPower(int modulus) {
 		cout << "Enter the base: ";
 		cin >> base;
 		if (base <= 0 || base >= modulus) {
-			cout << "Enter number from the ring: ";
+			cout << "Enter a number from the ring: ";
 			cin >> base;
 		}
 	} while (base <= 0 || base >= modulus);
 
-	cout << "You have entered the base - " << base;
+	cout << "You have entered the base - " << base << endl;
 
 	do
 	{
 		cout << "Enter the power: ";
 		cin >> power;
 		if (power < 0) {
-			cout << "Enter non-negative power: ";
+			cout << "Enter a non-negative power: ";
 			cin >> power;
 		}
 	} while (power < 0);
 
-	cout << "You have entered the power - " << power;
+	cout << "You have entered the power - " << power << endl;
 
 	if (base == 0 && power == 0) {
-		cout << "There isn't such a value" << endl;
+		cout << "There isn't such a value." << endl;
 		return 0;
 	}
 	if (power == 0) {
